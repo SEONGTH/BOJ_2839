@@ -1,7 +1,7 @@
 #include <stdio.h>////3빼기
 #include <stdlib.h>
 int main(void) {
-    int sugar=0,five=0,three,temp;
+    int sugar=0,five=0,three=0,temp;
     scanf("%d",&sugar);//sugar스캔 후
     if(sugar%5==0){
         five=sugar/5;
@@ -10,7 +10,7 @@ int main(void) {
         three=sugar/3;
         }
         for(int i=1;i<10;i++){
-            if((sugar-3*i)%5==0){
+            if((sugar-3*i)/5>1){
                 three=i;
                 five=(sugar-3*i)/5;
                 break;
@@ -22,6 +22,7 @@ int main(void) {
         }
     else if(three==0&&five==0){
         printf("-1");
+        exit(0);
     }
     if(three<five){
         printf("%d",three);
