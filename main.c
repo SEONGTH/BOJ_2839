@@ -1,25 +1,33 @@
-#include <stdio.h>////11말고 작동
+#include <stdio.h>////3빼기
+#include <stdlib.h>
 int main(void) {
-    int sugar,five,temp;
+    int sugar=0,five=0,three,temp;
     scanf("%d",&sugar);//sugar스캔 후
-    temp=sugar;
-    five=sugar/5;//5키로로 나누고
-    temp=sugar%5;//5로 안나눠지면
-    if(sugar%5==0){//5로 나눠지는 가장 깔끔한 경우
-        printf("%d",five);
+    if(sugar%5==0){
+        five=sugar/5;
     }
-    else{//더럽고 추잡한 경우...
-        if(temp%3==0){
-            printf("%d",five+temp/3);
+    else if(sugar%3==0){
+        three=sugar/3;
         }
-        else{//진짜 더럽고 추잡한경우
-            if((sugar-5)%3==0){
-                printf("%d",five-1+temp/3);
-            }
-            else{
-                printf("-1");
+        for(int i=1;i<10;i++){
+            if((sugar-3*i)%5==0){
+                three=i;
+                five=(sugar-3*i)/5;
+                break;
             }
         }
+        if(three!=0&&five!=0){
+            printf("%d",five+three);
+            exit(0);
+        }
+    else if(three==0&&five==0){
+        printf("-1");
+    }
+    if(three<five){
+        printf("%d",three);
+    }
+    else{
+        printf("%d",five);
     }
     return 0;
 }
