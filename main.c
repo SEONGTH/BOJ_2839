@@ -1,34 +1,48 @@
-#include <stdio.h>////3빼기
+#include <stdio.h>// ㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗ
 #include <stdlib.h>
-int main(void) {
-    int sugar=0,five=0,three=0,temp;
-    scanf("%d",&sugar);//sugar스캔 후
-    if(sugar%5==0){
-        five=sugar/5;
-    }
-    else if(sugar%3==0){
-        three=sugar/3;
+int main(void){
+    int sugar,temp,five,three,count=0;
+    scanf("%d",&sugar);
+    while(1){
+        temp=sugar;
+        if(temp<20){
+            temp=temp%10;
+            count++;
         }
-        for(int i=1;i<10;i++){
-            if((sugar-3*i)/5>1){
-                three=i;
-                five=(sugar-3*i)/5;
-                break;
-            }
+        if(sugar>10){
+            break;
         }
-        if(three!=0&&five!=0){
-            printf("%d",five+three);
-            exit(0);
-        }
-    else if(three==0&&five==0){
-        printf("-1");
-        exit(0);
     }
-    if(three<five){
-        printf("%d",three);
+    ////////////////////////////////////////////
+    if(temp==10){
+        printf("%d",2+count*2);
     }
-    else{
-        printf("%d",five);
+    if(temp==11){
+        printf("%d",3+count*2);
+    }
+    if(temp==12){
+        printf("%d",4+count*2);
+    }
+    if(temp==13){
+        printf("%d",3+count*2);
+    }
+    if(temp==14){
+        printf("%d",4+count*2);
+    }
+    if(temp==15){
+        printf("%d",3+count*2);
+    }
+    if(temp==16){
+        printf("%d",4+count*2);
+    }
+    if(temp==17){
+        printf("%d",5+count*2);
+    }
+    if(temp==18){
+        printf("%d",4+count*2);
+    }
+    if(temp==19){
+        printf("%d",5+count*2);
     }
     return 0;
 }
